@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="shopping-list">
+    <h1>{{ header}}</h1>
+    <div class="add-item-form">
+      <input type="text" v-model="newItem" placeholder="Add an item" @keyup.enter="addItem(newItem)">
+      <button class="btn btn-primary" @click="addItem(newItem)" >Save Items</button>
+    </div>
+    <ul>
+      <li v-for="item in items">{{ item }}</li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:"#shopping-list",
+      data: {
+        header: "Estoy aprendiendo Vue",
+        newItem:"",
+        items: [
+              "lista",
+              "lista",
+              "20 cups",
+        ]
+      },
+      methods: {
+        addItem(item){
+          this.items.push(item);
+          this.newItem= "";
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

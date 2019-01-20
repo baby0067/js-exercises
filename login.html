@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="title-login" >
+    <h1>
+      Ingresar
+    </h1>
+  </div>
+  <div id="login">
+    <input type="text" name="" id="username" placeholder="username">
+    <input type="password" name="" id="password" placeholder="password">
+    <button class="btn" id="entrar">
+      entrar
+    </button>
+  </div>
+
+  <script>
+    
+    let button = document.getElementById("entrar");
+    button.addEventListener("click", function() {
+      let login = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+      if (login=="admin"){
+        if (password=="TheMaster"){
+         alert("welcome");
+        }else if (password==null||password==""){
+         alert("canceled");
+        }else{
+         alert("wrong password");
+        }
+      }else if (login==null||login==""){
+       alert("canceled");
+      }else{
+       alert("I don't know you")
+      }
+    })
+
+  </script>
+</body>
+</html>
