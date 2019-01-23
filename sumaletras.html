@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title">
+      <h1>Suma de letras o palabras</h1>
+    </div>
+    <div id="wrapper-letter-save">
+      <div id="letter-sum" class="style-box">
+        <input type="text" name="escribe una letra" id="add-letter">
+      </div>
+      <button class="btn" id="letter-save">     
+        Ingresar
+      </button>
+    </div>
+    <div class="title" id="letters-summed">
+      <h1>
+        Letras o palabras sumadas
+      </h1>
+      <div id="letters-saved">
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let button = document.getElementById("letter-save");
+    let word = "";
+    button.addEventListener("click", function(){
+      let letter = document.getElementById("add-letter").value; 
+      word = word + letter; 
+      let wordSaved = document.getElementById("letters-saved")
+      wordSaved.innerHTML = word;
+      document.getElementById("add-letter").value = "";
+    })
+  </script>
+</body>
+</html>
